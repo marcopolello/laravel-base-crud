@@ -1,6 +1,8 @@
 @extends('layouts.main-layout')
 @section('section')
 
+  <h1><a href="{{ route('device-create') }}">CREATE NEW DEVICE</a></h1>
+  
   <ul>
 
     @foreach ($devices as $device)

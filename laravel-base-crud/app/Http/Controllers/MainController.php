@@ -19,4 +19,13 @@ class MainController extends Controller
     $device = Device::findOrFail($id);
     return view('pages.device', compact('device'));
   }
+  // metodo per creare una nuova entità, un nuovo prodotto elettrico nel caso di questo proj
+  public function create() {
+    return view('pages.device-create');
+  }
+  // metodo per salvare il device creato
+  public function store(Request $request) {
+    Device::create($request -> all());
+    return redirect() -> route('devices-index');
+  }
 }
