@@ -2,17 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
+// rotta con url: /devices che richiama il maincontroller in cui ho messo un method index x chiamare il database -> tabella dei devices
+Route::get('/devices', 'MainController@index')
+-> name('devices-index'); //assegno un nome alla rotta;
+
+// ore mi serve una nuova rotta più flessibile che mi mandi in una pagina x il singolo elemento
+Route::get('/devices/{id}', 'MainController@show')
+-> name('device-show');
