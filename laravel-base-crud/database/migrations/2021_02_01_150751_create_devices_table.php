@@ -14,8 +14,14 @@ class CreateDevicesTable extends Migration
     public function up()
     {
         Schema::create('devices', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table  ->  id();
+
+            $table -> string('name');
+            $table -> string('model');
+            $table -> bigInteger('price') -> comment('€');
+            $table -> bigInteger('consumption') ->comment('Watt');
+
+            $table  ->  timestamps();
         });
     }
 
