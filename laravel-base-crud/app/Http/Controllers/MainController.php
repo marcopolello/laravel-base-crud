@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// necessario dire che sto usando app\modello Device per poi usarlo nel method
+// necessario dire che sto usando app\modello(che sto usando)->Device in questo caso, per poi usarlo nel method
 use App\Device;
 
 class MainController extends Controller
